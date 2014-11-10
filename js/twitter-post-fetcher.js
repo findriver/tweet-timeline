@@ -180,4 +180,3 @@ function handleTweets(tweets){
     element.innerHTML = html;
 }
 
-twitterFetcher.fetch(config5);
