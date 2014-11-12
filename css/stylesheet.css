@@ -8,12 +8,12 @@ h2 {
 }
 
 div {
-	width: 380px !important;
+	width: 430px !important;
 	font-family: Arial;
 }
 
 p{
-	font-size:12pt;
+	font-size:11pt;
 	margin-top: 10px;
 	color:#000;
 	margin: 5px 10px 5px 5px;
@@ -35,24 +35,20 @@ a:hover {
 ul li {
 	list-style:none;
 	overflow:hidden;
-	border:1px solid #000;
+	border:1px solid #E0E0E0;
+	border-radius:5px;
 }
-
-
-.user, .tweet, .timePosted {
-	float:left;
-}
-
 
 /* div .user */
 
 .user {
+	float:left;
 	height:10%;
 	clear:left;
 }
 
 .user img{
-	border-radius:10px
+	border-radius:10px;
 }
 
 .user img, .user a > span {
@@ -61,7 +57,7 @@ ul li {
 }
 
 .user a > span[data-scribe]{
-	font-size: 13px !important;
+	font-size: 10px !important;
 	font-weight: normal !important;
 	margin-top: 36px;
 	color: #909090;
@@ -69,7 +65,7 @@ ul li {
 }
 
 .user span span {
-	font-size: 16px !important;
+	font-size: 13px !important;
 	font-weight: bold;
 	display:block;
 	margin-top: 30px;
@@ -79,12 +75,22 @@ ul li {
 	text-decoration:underline !important;
 }
 
+/* p .tweet */
+.tweet{
+	float:left;
+	margin-left: 18%;
+	max-height: 100%;
+}
+
+
 /* p .timepost */
 
 .timePosted {
 	height:5%;
-	font-size: 13px;
+	font-size: 11px;
 	color: #909090;
+	float:right;
+	margin-right: 5%;
 }
 
 
