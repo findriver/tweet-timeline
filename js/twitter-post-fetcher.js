@@ -81,7 +81,7 @@ n[b]+'" class="twitter_fav_icon">Favorite</a></p>');B&&void 0!==h[b]&&(l=h[b],vo
 // A simple example to get my latest tweet and write to a HTML element with
 // id "example1". Also automatically hyperlinks URLS and user mentions and
 // hashtags.
-var config1 = {
+/*var config1 = {
   "id": '345170787868762112',
   "domId": 'example1',
   "maxTweets": 1,
@@ -127,7 +127,7 @@ twitterFetcher.fetch(config3);
 // custom format to display the date/time of the post, and does not show
 // retweets.
 var config4 = {
-  "id": '345690956013633536',
+  "id": '502160051226681344',
   "domId": 'example4',
   "maxTweets": 3,
   "enableLinks": true,
@@ -146,7 +146,7 @@ function dateFormatter(date) {
   return date.toTimeString();
 }
 
-twitterFetcher.fetch(config4);
+twitterFetcher.fetch(config4);*/
 
 
 // ##### Advanced example 2 #####
@@ -155,7 +155,7 @@ twitterFetcher.fetch(config4);
 // if you need full control over the output.
 
 var config5 = {
-  "id": '345690956013633536',
+  "id": '502160051226681344',
   "domId": '',
   "maxTweets": 3,
   "enableLinks": true,
@@ -179,4 +179,6 @@ function handleTweets(tweets){
     html += '</ul>';
     element.innerHTML = html;
 }
+
+twitterFetcher.fetch(config5);
 
