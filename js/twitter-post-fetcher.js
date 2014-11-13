@@ -157,7 +157,7 @@ twitterFetcher.fetch(config4);*/
 var config5 = {
   "id": '502160051226681344',
   "domId": '',
-  "maxTweets": 3,
+  "maxTweets": 10,
   "enableLinks": true,
   "showUser": true,
   "showTime": true,
@@ -172,13 +172,16 @@ function handleTweets(tweets){
     var n = 0;
     var element = document.getElementById('example5');
     var html = '<ul>';
+	
     while(n < x) {
       html += '<li>' + tweets[n] + '</li>';
       n++;
+	
     }
     html += '</ul>';
     element.innerHTML = html;
 }
 
 twitterFetcher.fetch(config5);
+
 

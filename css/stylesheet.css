@@ -1,17 +1,62 @@
-/* 
-* Example style!
-* You can do whatever the hell you want on your site :-)
-*/
-
-h2 {
-	clear:both;
-}
-
-div {
-	width: 430px !important;
+body * {
 	font-family: Arial;
 }
 
+/*carousels*/ 
+#wrapper{
+	width: 430px;
+	position: absolute;
+	margin-bottom: 200px;
+}
+
+#wrapper h3{
+	font-size: 18px;
+	text-align: center;
+}
+
+#wrapper  > div {
+	border-top: 1px soild #ccc;
+	border-bottom: 1px solid #ccc;
+	width: 100%;
+	padding: 15px 0;
+	overflow: hidden;
+}
+
+#wrapper ul{
+	display: block;
+	height: 30px;
+	background-color: #eee;
+	list-style: none;
+}
+
+#wrapper li{
+	display: block;
+	list-style: none;
+	float: left;
+	padding: 5px 5px;
+	background-color: #666;
+	color: #fff;
+}
+
+/* Tweet*/
+h2 {
+	clear:both;
+	width: 430px;
+}
+
+#example5 {
+	width: 430px !important;
+	top: 110px;
+	height: 75%;
+	position: absolute;
+}
+
+ul{
+	height: 100%;
+	overflow: auto;
+	border: 1px solid #E0E0E0;
+	padding: 0 0 0 0;
+}
 p{
 	font-size:11pt;
 	margin-top: 10px;
@@ -94,31 +139,11 @@ ul li {
 }
 
 
+.navigation{
+	border: 2px solid #000;
 
-.interact {
-  float:left;
-  width:10%;
-  margin-top:-7px;
 }
 
-.interact a {
-  margin-left:5px;
-  float:left;
-}
-
-.media img {
-  max-width:250px;
-  max-height:250px;
-}
-
-#linkage {
-  position:fixed;
-  top:0px;
-  right:0px;
-  background-color:#3d3d3d;
-  color:#ffffff;
-  text-decoration:none;
-  padding:5px;
-  width:10%;
-  font-family:arial;
+.scroll{
+		border: 2px solid #000;
 }
