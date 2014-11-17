@@ -184,14 +184,7 @@ function handleTweets(tweets){
     element.innerHTML = html;
 	
 	//////////////////////////////////////////////////////////////
-	/*var str_text = $(".tweet").html();
-	alert (str_text.substring(0,30));
-	var strip_str = text[n].replace(/(<([^>]+)>)/ig,"");
-	var t = $(".tweet").text();
-	//alert($(".tweet").html()); // get .tweet's content
-	alert(t);
-	*/
-	
+	/////////// output class twitter text in css frame////////////
 	var tweet_arr = {};
 	$(".tweet").each(function(a){
 		tweet_arr[a] = $(this).text();
@@ -211,11 +204,10 @@ function handleTweets(tweets){
 	element_banner.innerHTML = html_banner;
 	
 	
-
+	///////////////////////////////////////////////////////////////
+	/////////// Vertical Marquee Function////////////
 	var $wrapperul = $('#wrapper ul');
 	var	$wrapperli = $wrapperul.append($wrapperul.html()).children();
-		
-		
 	var	_height = $('#wrapper').height()* -1;
 	var	scrollSpeed = 600;
 	var	timer;
@@ -243,7 +235,7 @@ function handleTweets(tweets){
 		timer = setTimeout(showbanner, speed);
 	}
 	timer = setTimeout(showbanner, speed);
-	
+	//////////////////////////////////////////////////////////////////
 }
 
 twitterFetcher.fetch(config5);
