@@ -2,19 +2,24 @@ body * {
 	font-family: Arial;
 }
 
+h3{
+	font-size: 18px;
+	text-align: center;
+	width: 430px;
+}
+
 /*carousels*/ 
 #wrapper{
 	position: relative;
 	overflow: hidden;
 	width: 430px;
 	height: 38px;
-	border: 1px solid #ccc;
+	border: 1px solid #E0E0E0;
+	background-color: #eee;
+	text-align: center;
+	border-radius:5px;
 }
 
-/*#wrapper h3{
-	font-size: 18px;
-	text-align: center;
-}*/
 
 #wrapper ul, #wrapper li{
 	margin: 0;
