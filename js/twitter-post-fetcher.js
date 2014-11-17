@@ -76,12 +76,12 @@ n[b]+'" class="twitter_fav_icon">Favorite</a></p>');B&&void 0!==h[b]&&(l=h[b],vo
  *     for Twitter phrases like "posted on" or "time ago". Default value
  *     is "en" (English).
  */
-
+/*
 // ##### Simple example 1 #####
 // A simple example to get my latest tweet and write to a HTML element with
 // id "example1". Also automatically hyperlinks URLS and user mentions and
 // hashtags.
-/*var config1 = {
+var config1 = {
   "id": '345170787868762112',
   "domId": 'example1',
   "maxTweets": 1,
@@ -132,16 +132,16 @@ var config4 = {
   "maxTweets": 3,
   "enableLinks": true,
   "showUser": false,
-  "showTime": true,
-  "dateFunction": dateFormatter,
+  "showTime": false,
+  //"dateFunction": dateFormatter,
   "showRetweet": false
-};
-
+};*/
+/*
 // For advanced example which allows you to customize how tweet time is
 // formatted you simply define a function which takes a JavaScript date as a
 // parameter and returns a string!
 // See http://www.w3schools.com/jsref/jsref_obj_date.asp for properties
-// of a Date object.
+// of a Date object. 
 function dateFormatter(date) {
   return date.toTimeString();
 }
@@ -171,17 +171,45 @@ function handleTweets(tweets){
     var x = tweets.length;
     var n = 0;
     var element = document.getElementById('example5');
+	var text = []; // new var
+	var html2;
     var html = '<ul>';
-	
     while(n < x) {
       html += '<li>' + tweets[n] + '</li>';
-      n++;
-	
+	  //alert(jQuery.type(tweets[n]));
+	  text[n] = tweets[n];	// added line
+	  n++;
     }
     html += '</ul>';
     element.innerHTML = html;
+	
+	//////////////////////////////////////////////////////////////
+	/*var str_text = $(".tweet").html();
+	alert (str_text.substring(0,30));
+	var strip_str = text[n].replace(/(<([^>]+)>)/ig,"");
+	var t = $(".tweet").text();
+	//alert($(".tweet").html()); // get .tweet's content
+	alert(t);
+	*/
+	
+	var tweet_arr = {};
+	$(".tweet").each(function(a){
+		tweet_arr[a] = $(this).text();
+		//alert(tweet_arr[a]);
+	});
+	
+	var html_banner ='<ul>';
+	var a = 0;
+	while( a < x){		
+		html_banner += '<li>'+ tweet_arr[a]+'</li>';
+		a++;
+	}
+	html_banner += '</ul>';
+	//alert(html_banner);
+	
+	var element_banner = document.getElementById('wrapper');
+	element_banner.innerHTML = html_banner;
 }
 
 twitterFetcher.fetch(config5);
-
 

@@ -4,46 +4,36 @@ body * {
 
 /*carousels*/ 
 #wrapper{
+	position: relative;
+	overflow: hidden;
 	width: 430px;
-	position: absolute;
-	margin-bottom: 200px;
+	height: 38px;
+	border: 1px solid #ccc;
 }
 
-#wrapper h3{
+/*#wrapper h3{
 	font-size: 18px;
 	text-align: center;
+}*/
+
+#wrapper ul, .tweet_post{
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
-#wrapper  > div {
-	border-top: 1px soild #ccc;
-	border-bottom: 1px solid #ccc;
-	width: 100%;
-	padding: 15px 0;
+#wrapper ul {
+	position: absolute;
+}
+
+/.tweet_post{
+	
+	height:38;
+	line-height:38px;
 	overflow: hidden;
 }
 
-#wrapper ul{
-	display: block;
-	height: 30px;
-	background-color: #eee;
-	list-style: none;
-}
-
-#wrapper li{
-	display: block;
-	list-style: none;
-	float: left;
-	padding: 5px 5px;
-	background-color: #666;
-	color: #fff;
-}
-
 /* Tweet*/
-h2 {
-	clear:both;
-	width: 430px;
-}
-
 #example5 {
 	width: 430px !important;
 	top: 110px;
@@ -51,33 +41,33 @@ h2 {
 	position: absolute;
 }
 
-ul{
+#example5 ul{
 	height: 100%;
 	overflow: auto;
 	border: 1px solid #E0E0E0;
 	padding: 0 0 0 0;
 }
-p{
-	font-size:11pt;
+#example5 p{
 	margin-top: 10px;
 	color:#000;
 	margin: 5px 10px 5px 5px;
 	word-wrap:break-word;
+	margin-left: 67px;
 }
 
-a {
+#example5 a {
 	color: #000;
 }
 
-a:visited {
+#example5 a:visited {
 	color:#427fed;
 }
 
-a:hover {
+#example5 a:hover {
 	color:#82afff;
 }
 
-ul li {
+#example5 ul li {
 	list-style:none;
 	overflow:hidden;
 	border:1px solid #E0E0E0;
@@ -102,15 +92,15 @@ ul li {
 }
 
 .user a > span[data-scribe]{
-	font-size: 10px !important;
 	font-weight: normal !important;
 	margin-top: 36px;
 	color: #909090;
+	font-size: 9px;
 
 }
 
 .user span span {
-	font-size: 13px !important;
+	font-size: 12px !important;
 	font-weight: bold;
 	display:block;
 	margin-top: 30px;
@@ -125,6 +115,7 @@ ul li {
 	float:left;
 	margin-left: 18%;
 	max-height: 100%;
+	font-size: 14px;
 }
 
 
@@ -136,14 +127,4 @@ ul li {
 	color: #909090;
 	float:right;
 	margin-right: 5%;
-}
-
-
-.navigation{
-	border: 2px solid #000;
-
-}
-
-.scroll{
-		border: 2px solid #000;
 }

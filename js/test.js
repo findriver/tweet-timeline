@@ -1,36 +1,37 @@
-/*$(document).ready(function(){
-	$('ul').addClass('scroll');
-	var navhtml = $("<nav>").attr('id', 'navigation');
-	$('div').append(navhtml);
-	$(navhtml).appendTo('<a href="https://cdn.syndication.twimg.com/widgets/timelines/502160051226681344"></a> ');
-	$('#example5').infinitescroll({
-		navSelector: "#navigation",
-		nextSelector: "#navigation a",
-		itemSelector: ".scroll",		
-	
+
+$(function(){
+	var $wrapperul = $('div #wrapper ul'),
+		$wrapperli = $wrapperul.append($wrapperul.html()).children(),
+		
+		_height = $('div #wrapper').height()* -1,
+		scrollSpeed = 600,
+		timer,
+		speed = 1000 + scrollSpeed;
+		
+		
+	$wrapperli.hover(function(){
+		clearTimeout(timer);
+	}, function(){
+		timer = setTimeout(showbanner, speed); 
 	});
-});*/ 
-
-
-/* */
-
-
-$(document).ready(function(){
-	function getElements()
-	{
-	//var x=document.getElementsByTagName(".user a>span")[0];
-	alert($('div').attr('.tweet'));
+	
+	function showbanner(){
+		var _now = $wrapperul.position().top/_height;
+		alert (_now);
+		_now = (_now + 1)% $warpperli.length;
+		alert($warpperli.length);
+		
+		$wrapperul.animate({
+			top: _now * _height
+		}, scrollSpeed, function(){
+			if(_now == $wrapperli.length/2){
+				$wrapperul.css('top', 0);
+			}
+		});
+		
+		timer = setTimeout(showbanner, speed);
 	}
-	getElements();
+	timer = setTimeout(showbanner, speed);
+	
 });
 
-
-
-/*var tweet = $("p.tweet").text(),
-		tw_name = $(".user span span")
-	alert(tweet);*/
-
-
-
-
-//});
