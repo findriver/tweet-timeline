@@ -16,7 +16,7 @@ body * {
 	text-align: center;
 }*/
 
-#wrapper ul, .tweet_post{
+#wrapper ul, #wrapper li{
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -26,8 +26,7 @@ body * {
 	position: absolute;
 }
 
-/.tweet_post{
-	
+#wrapper ul li{
 	height:38;
 	line-height:38px;
 	overflow: hidden;

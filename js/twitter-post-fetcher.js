@@ -209,6 +209,41 @@ function handleTweets(tweets){
 	
 	var element_banner = document.getElementById('wrapper');
 	element_banner.innerHTML = html_banner;
+	
+	
+
+	var $wrapperul = $('#wrapper ul');
+	var	$wrapperli = $wrapperul.append($wrapperul.html()).children();
+		
+		
+	var	_height = $('#wrapper').height()* -1;
+	var	scrollSpeed = 600;
+	var	timer;
+	var	speed = 1000 + scrollSpeed;
+		
+	$wrapperli.hover(function(){
+		clearTimeout(timer);
+	}, function(){
+		timer = setTimeout(showbanner, speed); 
+	});
+	
+	function showbanner(){
+		var _now = $wrapperul.position().top/_height;		
+		_now = (_now + 1)% $wrapperli.length;
+		
+		
+		$wrapperul.animate({
+			top: _now * _height
+		}, scrollSpeed, function(){
+			if(_now == $wrapperli.length/2){
+				$wrapperul.css('top', 0);
+			}
+		});
+		
+		timer = setTimeout(showbanner, speed);
+	}
+	timer = setTimeout(showbanner, speed);
+	
 }
 
 twitterFetcher.fetch(config5);
