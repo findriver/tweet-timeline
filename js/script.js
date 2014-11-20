@@ -15,7 +15,7 @@ function refreshFeed() {
     refreshCount += 1;
         console.log('how many tweets there are', globalTweets.length)
         console.log('number of refreshes', refreshCount)    
-    if (globalTweets.length < 2 && refreshCount < 4) {
+    if (globalTweets.length < 2 && refreshCount < 3) {
         fetchTweet();
         console.log('fetch again')
     } else {
@@ -29,7 +29,7 @@ function refreshFeed() {
 
 var tweetConfig = {
   "id": '427176145516130304', 
-  "domId": 'twitter-widget',
+  "domId": '',
   "maxTweets": 10,
   "enableLinks": true,
   "showUser": true,
@@ -44,14 +44,16 @@ var tweetConfig = {
 // Vogue fashion '495312900106383360' 
 // JB '427176145516130304'
 
-function handleTweets(tweets){
-    globalTweets = tweets;
+function handleTweets(tweets) {
+    if (tweets.length > 3) {
+        globalTweets = tweets;
+    }    
     console.log('global tweets after being assigned', globalTweets.length)
     var tweetArray = $('<ul>');
 
-    for (var i = 0; i < tweets.length; i++) {
+    for (var i = 0; i < globalTweets.length; i++) {
       var tweetLi = $('<li>');
-      var tweetRaw = $(tweets[i]);
+      var tweetRaw = $(globalTweets[i]);
 
       var user = $(tweetRaw[0]);
       var tweet = $(tweetRaw[1]);
@@ -66,9 +68,8 @@ function handleTweets(tweets){
     }
 
     $('#tweet-wrapper').html(tweetArray);
-    // $('#twitter-widget').html(tweetArray);
+    //$('#twitter-widget').html(tweetArray);
     marqueeEffect();
-    return tweets;
 }    
 
 function marqueeEffect() {    
@@ -101,7 +102,6 @@ function marqueeEffect() {
         timer = setTimeout(showbanner, speed);
     }
     timer = setTimeout(showbanner, speed);
-    //////////////////////////////////////////////////////////////////
 }
 
 

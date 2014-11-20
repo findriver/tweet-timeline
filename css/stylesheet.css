@@ -1,25 +1,16 @@
 body * {
-	font-family: Arial;
+	font-family: Helvetica, Arial;
 }
 
-h3{
-	font-size: 18px;
-	text-align: center;
-	width: 430px;
-}
-
-/*carousels*/ 
 #tweet-wrapper{
 	position: relative;
 	overflow: hidden;
 	width: 550px;
 	height: 70px;
-	
 	border: 1px solid #E0E0E0;
 	background-color: #eee;
 	border-radius:5px;
 }
-
 
 #tweet-wrapper ul {
 	position: absolute;
@@ -35,98 +26,15 @@ h3{
 	overflow: hidden;
 }
 
-/* Tweet*/
-#example5 {
-	width: 430px !important;
-	top: 110px;
-	height: 75%;
-	position: absolute;
+#tweet-wrapper p {
+	color: #333;
 }
 
-#example5 ul{
-	height: 100%;
-	overflow: auto;
-	border: 1px solid #E0E0E0;
-	padding: 0 0 0 0;
-}
-#example5 p{
-	margin-top: 10px;
-	color:#000;
-	margin: 5px 10px 5px 5px;
-	word-wrap:break-word;
-	margin-left: 67px;
+#tweet-wrapper a {
+	color: #ff6e00;
+	text-decoration: none;
 }
 
-#example5 a {
-	color: #000;
-}
-
-#example5 a:visited {
-	color:#427fed;
-}
-
-#example5 a:hover {
-	color:#82afff;
-}
-
-#example5 ul li {
-	list-style:none;
-	overflow:hidden;
-	border:1px solid #E0E0E0;
-	border-radius:5px;
-}
-
-/* div .user */
-
-.user {
-	float:left;
-	height:10%;
-	clear:left;
-}
-
-.user img{
-	border-radius:10px;
-}
-
-.user img, .user a > span {
-	float:left;
-	margin: 5px 0 5px 10px;
-}
-
-.user a > span[data-scribe]{
-	font-weight: normal !important;
-	margin-top: 36px;
-	color: #909090;
-	font-size: 9px;
-
-}
-
-.user span span {
-	font-size: 12px !important;
-	font-weight: bold;
-	display:block;
-	margin-top: 30px;
-}
-
-.user > a  span span:hover{
-	text-decoration:underline !important;
-}
-
-/* p .tweet */
-.tweet{
-	float:left;
-	margin-left: 18%;
-	max-height: 100%;
-	font-size: 14px;
-}
-
-
-/* p .timepost */
-
-.timePosted {
-	height:5%;
-	font-size: 11px;
-	color: #909090;
-	float:right;
-	margin-right: 5%;
+#tweet-wrapper a:hover {
+	color:#e66300;
 }
