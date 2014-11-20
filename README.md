@@ -8,7 +8,7 @@ Twitter Post Fetch deconstructs the client-side Twitter widget and allows you to
 
 ### Check for updates 
 
-```
+```javascript
 var fetchCount = 0;
 
 function refreshFeed() {
@@ -29,7 +29,7 @@ The `refreshFeed` function is called each time `fetchTweets` executes and checks
 
 A global tweet array holds the tweets currently being displayed. `globalTweets` only refreshes if we successfully fetch more than 3 tweets. 
 
-```
+```javascript
 var globalTweets = [];
 
 function handleTweets(tweets) {
@@ -39,3 +39,6 @@ function handleTweets(tweets) {
     // Build new tweet array
   } 
 ``` 
+
+### Customization
+The interval at which to refresh feed (default: 120000ms) and the minimum number of tweets in global array (default: 4) can be customized.
