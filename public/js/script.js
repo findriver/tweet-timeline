@@ -11,20 +11,22 @@ function fetchTweet() {
     fetchCount += 1; 
 
     // Wait for globalTweets to populate
-    // then check if need to refresh again   
+    // then check if need to refetch  
     setTimeout(refreshFeed, 400); 
 }
 
 function refreshFeed() {
     if (globalTweets.length === 0) {
+        console.log('no tweet')
         // No tweet, keep fetching
         fetchCount = 0;
-        fetchTweet();
+        setTimeout(fetchTweet, 1000);
     } else if (globalTweets.length < 3 && fetchCount < 3) {
         // Not many tweets as expected, fetch again
         // without reseting fetchCount
         fetchTweet(); 
     } else {
+        console.log('refresh later')
         // Fetch again after 2 mins
         fetchCount = 0; 
         setTimeout(fetchTweet, 120000);   
