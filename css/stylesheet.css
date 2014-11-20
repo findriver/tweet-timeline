@@ -9,31 +9,29 @@ h3{
 }
 
 /*carousels*/ 
-#wrapper{
+#tweet-wrapper{
 	position: relative;
 	overflow: hidden;
-	width: 430px;
-	height: 38px;
+	width: 550px;
+	height: 70px;
+	
 	border: 1px solid #E0E0E0;
 	background-color: #eee;
-	text-align: center;
 	border-radius:5px;
 }
 
 
-#wrapper ul, #wrapper li{
+#tweet-wrapper ul {
+	position: absolute;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-#wrapper ul {
-	position: absolute;
-}
-
-#wrapper ul li{
-	height:38;
-	line-height:38px;
+#tweet-wrapper li {
+	height: 70px;
+	padding: 8px 5px;
+	box-sizing: border-box;	
 	overflow: hidden;
 }
 
