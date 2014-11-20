@@ -1,5 +1,5 @@
 var globalTweets = [],
-    refreshCount = 0;
+    fetchCount = 0;
 
 $(function() { 
     fetchTweet();
@@ -7,23 +7,27 @@ $(function() {
 
 function fetchTweet() {
     twitterFetcher.fetch(tweetConfig);
+    fetchCount += 1;    
     setTimeout(refreshFeed, 400); 
     // Wait for globalTweets to populate
 }
 
 function refreshFeed() {
-    refreshCount += 1;
-        console.log('how many tweets there are', globalTweets.length)
-        console.log('number of refreshes', refreshCount)    
-    if (globalTweets.length < 2 && refreshCount < 3) {
+    console.log('number of global tweets', globalTweets.length)
+    console.log('number of refreshes', fetchCount) 
+
+    if (globalTweets.length === 0) {
+        console.log('no tweet, keep fetching')
+        fetchCount = 0;
+        setInterval(fetchTweet, 5000);
+    } else if (globalTweets.length < 2 && fetchCount < 3) {
         fetchTweet();
-        console.log('fetch again')
+        console.log('fetch again now')
     } else {
-        console.log('fetch at interval') 
-        setInterval(function() {
-            fetchTweet();
-            refreshCount = 0;
-        }, 120000); 
+        console.log('fetch more later')
+        fetchCount = 0; 
+        setTimeout(fetchTweet, 120000); 
+        // Fetch again after 2 mins
     } 
 }
 
@@ -47,29 +51,30 @@ var tweetConfig = {
 function handleTweets(tweets) {
     if (tweets.length > 3) {
         globalTweets = tweets;
+    
+        console.log('global tweets after being assigned', globalTweets.length)
+        var tweetArray = $('<ul>'); 
+
+        for (var i = 0; i < globalTweets.length; i++) {
+          var tweetLi = $('<li>');
+          var tweetRaw = $(globalTweets[i]);    
+
+          var user = $(tweetRaw[0]);
+          var tweet = $(tweetRaw[1]);   
+
+          var handle = user.find('span').last().html();
+          var userSpan = $('<a>').attr('href', 'http://twitter.com/'+handle).html(handle);
+          tweet.find('img').remove();
+          var tweetContent = tweet.html();  
+
+          tweetLi.append(userSpan).append(': ').append(tweetContent);
+          tweetArray.append(tweetLi);
+        }   
+
+        $('#tweet-wrapper').html(tweetArray);
+        //$('#twitter-widget').html(tweetArray);
+        marqueeEffect();
     }    
-    console.log('global tweets after being assigned', globalTweets.length)
-    var tweetArray = $('<ul>');
-
-    for (var i = 0; i < globalTweets.length; i++) {
-      var tweetLi = $('<li>');
-      var tweetRaw = $(globalTweets[i]);
-
-      var user = $(tweetRaw[0]);
-      var tweet = $(tweetRaw[1]);
-
-      var handle = user.find('span').last().html();
-      var userSpan = $('<a>').attr('href', 'http://twitter.com/'+handle).html(handle);
-      tweet.find('img').remove();
-      var tweetContent = tweet.html();
-
-      tweetLi.append(userSpan).append(': ').append(tweetContent);
-      tweetArray.append(tweetLi);
-    }
-
-    $('#tweet-wrapper').html(tweetArray);
-    //$('#twitter-widget').html(tweetArray);
-    marqueeEffect();
 }    
 
 function marqueeEffect() {    
