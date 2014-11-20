@@ -7,6 +7,10 @@ body * {
 	margin: 50px auto;
 }
 
+#refresh {
+	margin-top: 2em;
+}
+
 /* TWEET WRAPPER */
 #tweet-wrapper{
 	position: relative;
