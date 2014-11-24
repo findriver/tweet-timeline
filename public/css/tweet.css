@@ -24,16 +24,3 @@
     box-sizing: border-box; 
     overflow: hidden;
 }
-
-#tweet-wrapper p {
-    color: #333;
-}
-
-#tweet-wrapper a {
-    color: #ff6e00;
-    text-decoration: none;
-}
-
-#tweet-wrapper a:hover {
-    color:#e66300;
-}

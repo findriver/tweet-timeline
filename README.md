@@ -6,7 +6,7 @@ This demo uses the <a href="http://www.jasonmayes.com/projects/twitterApi/">Twit
 ### Using Twitter post fetcher
 You simply need to customize the tweetConfig object and pass it to `twitterFetcher.fetch()` function. `handleTweets` is the custom callback that lets you decide how to display your tweets.
 
-```
+```javascript
 var tweetConfig = {
   "id": '514055194921799680', 
   "domId": '',
