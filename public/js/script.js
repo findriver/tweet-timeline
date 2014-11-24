@@ -2,11 +2,21 @@ var globalTweets = [],
     fetchCount = 0;
 
 $(function() { 
-    fetchTweet();
-    $('#refresh').click(fetchTweet)
+    fetchTweet(tweetConfig);
+    $('#refresh').click(function() {
+      window.location.reload(); 
+    });
+
+    $('form.trial').submit(function(e) {
+      e.preventDefault();
+      var widgetId = $('form.trial input').val();
+      var trialConfig = $.extend(tweetConfig, {id: widgetId});
+      fetchTweet(trialConfig);
+    }); 
+
 });
 
-function fetchTweet() {
+function fetchTweet(tweetConfig) {
     twitterFetcher.fetch(tweetConfig);
     fetchCount += 1; 
 
@@ -66,13 +76,13 @@ function handleTweets(tweets) {
 
     $('#tweet-wrapper').html(tweetArray);
     //$('#twitter-widget').html(tweetArray);
-    marqueeEffect();
+    marqueeEffect('#tweet-wrapper ul');
   }    
 }    
 
 
-function marqueeEffect() {    
-  var $wrapperUl = $('#tweet-wrapper ul');
+function marqueeEffect(tweetArray) {    
+  var $wrapperUl = $(tweetArray);
   var $wrapperLi = $wrapperUl.append($wrapperUl.html()).children();
   var _height = $('#tweet-wrapper').height()* -1;
   var scrollSpeed = 1000;

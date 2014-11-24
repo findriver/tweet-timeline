@@ -1,0 +1,39 @@
+/* TWEET WRAPPER */
+#tweet-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 550px;
+    height: 75px;
+    border: 1px solid #E0E0E0;
+    background-color: #eee;
+    border-radius:5px;
+}
+
+#tweet-wrapper ul {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#tweet-wrapper li {
+    width: 100%;
+    height: 75px;
+    padding: 8px 5px;
+    box-sizing: border-box; 
+    overflow: hidden;
+}
+
+#tweet-wrapper p {
+    color: #333;
+}
+
+#tweet-wrapper a {
+    color: #ff6e00;
+    text-decoration: none;
+}
+
+#tweet-wrapper a:hover {
+    color:#e66300;
+}
