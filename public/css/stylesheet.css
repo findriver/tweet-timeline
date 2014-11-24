@@ -12,7 +12,7 @@ body * {
 }
 
 /* TWEET WRAPPER */
-#tweet-wrapper{
+#tweet-wrapper {
 	position: relative;
 	overflow: hidden;
 	width: 550px;
@@ -24,6 +24,7 @@ body * {
 
 #tweet-wrapper ul {
 	position: absolute;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	list-style: none;
